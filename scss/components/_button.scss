@@ -1,0 +1,29 @@
+@use '../abstracts' as *;
+
+.btn {
+	cursor: pointer;
+	align-self: stretch;
+	padding-block: 0.75rem;
+	font-size: $fs-13;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+	border: none;
+	border-radius: 0.25rem;
+	transition: all 250ms ease-in;
+
+	&-primary {
+		border: 1px solid hsl(236, 72%, 79%);
+		background: $clr-primary-400;
+		color: #ffffff;
+
+		@include hover-focus(transparent, hsl(237, 63%, 64%));
+	}
+
+	&-neutral {
+		border: 1px solid #ffffff;
+		background: #ffffff;
+		color: hsl(237, 63%, 64%);
+
+		@include hover-focus(transparent, #ffffff);
+	}
+}

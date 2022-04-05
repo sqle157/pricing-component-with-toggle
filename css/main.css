@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/* 
+------------------------------------------------
+------------------ Reset CSS -------------------
+------------------------------------------------
+*/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	-webkit-text-decoration-skip: ink;
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		-webkit-animation-duration: 0.01ms !important;
+		animation-duration: 0.01ms !important;
+		-webkit-animation-iteration-count: 1 !important;
+		animation-iteration-count: 1 !important;
+		-webkit-transition-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* 
+------------------------------------------------
+------------------ Main CSS --------------------
+------------------------------------------------
+*/
+
+h1 {
+	font-size: 2rem;
+	line-height: 1;
+}
+
+h2 {
+	font-size: 1.125rem;
+	line-height: 1.6;
+}
+
+p {
+	font-size: 0.9375rem;
+	line-height: 1.8;
+}
+
+@media only screen and (max-width: 61.25em) {
+	main {
+		padding-block: 4rem;
+	}
+}
+
+body {
+	display: -ms-grid;
+	display: grid;
+	place-items: center;
+	color: #6d708d;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+	background-color: #f6f6fe;
+	background-image: url('../images/bg-bottom.svg'), url('../images/bg-top.svg');
+	background-repeat: no-repeat;
+	background-position: bottom left, top right;
+}
+
+/* Utilities  */
+.container {
+	width: min(88%, 1050px);
+	margin-inline: auto;
+}
+
+.grid-auto {
+	display: -ms-grid;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
+	gap: var(--gap, 0);
+}
+
+@media only screen and (max-width: 61.25em) {
+	.grid-auto {
+		--gap: 2rem;
+	}
+}
+
+.w-100 {
+	width: 100%;
+}
+
+.fade {
+	opacity: 1 !important;
+	-webkit-transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+	transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+/* Component CSS */
+/* Header Section */
+.header {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	margin-bottom: 4rem;
+}
+
+.header__title {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 3rem;
+}
+
+.header__toggle {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 1.5rem;
+}
+
+.header__toggle > span {
+	font-size: 0.9375rem;
+	line-height: 1.8;
+}
+
+.header__switch {
+	position: relative;
+	display: inline-block;
+	width: 56px;
+	height: 32px;
+}
+
+.header__switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border-radius: 2rem;
+	background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+	background: linear-gradient(to right, #a3a8f0, #696fdd);
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: '';
+	height: 24px;
+	width: 24px;
+	right: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+	border-radius: 50%;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(-24px);
+	transform: translateX(-24px);
+}
+
+input:hover + .slider,
+input:focus + .slider {
+	opacity: 0.5;
+}
+
+/* Card CSS */
+.card {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	text-align: center;
+	padding: 3rem 2rem;
+	gap: 2rem;
+	border-radius: 0.5rem;
+}
+
+.card--neutral {
+	padding: 1.5rem 2rem;
+	margin-block: auto;
+	background-color: #ffffff;
+	/* -webkit-box-shadow: 0 10px 22px 0 #b3b5c6;
+	box-shadow: 0 10px 22px 0 #b3b5c6; */
+}
+
+.card--neutral:first-of-type {
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.card--neutral:last-of-type {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.card--primary {
+	color: #ffffff;
+	background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+	background: linear-gradient(to right, #a3a8f0, #696fdd);
+}
+
+.card--primary .plan__cover > * {
+	border-top: 0.5px solid #ffffff;
+}
+
+.card--primary .plan__cover > *:last-child {
+	border-bottom: 0.5px solid #ffffff;
+}
+
+@media only screen and (max-width: 61.25em) {
+	.card {
+		padding: 2.25rem;
+		border-radius: 0.5rem !important;
+	}
+}
+
+/* Plan CSS */
+.plan__price {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.plan__cover {
+	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.plan__cover > * {
+	border-top: 0.5px solid #6d708d;
+	padding-block: 0.75rem;
+}
+
+.plan__cover > *:last-child {
+	border-bottom: 0.5px solid #6d708d;
+}
+
+.dollar {
+	font-size: 2.5rem;
+}
+
+@media only screen and (max-width: 20.5em) {
+	.dollar {
+		font-size: 2rem;
+	}
+}
+
+.price {
+	font-size: 4.5rem;
+	line-height: 1;
+	opacity: 0;
+	-webkit-transition: opacity 225ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	transition: opacity 225ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@media only screen and (max-width: 20.5em) {
+	.price {
+		font-size: 3rem;
+	}
+}
+
+/* Button CSS */
+.btn {
+	cursor: pointer;
+	-ms-flex-item-align: stretch;
+	-ms-grid-row-align: stretch;
+	align-self: stretch;
+	padding-block: 0.75rem;
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+	letter-spacing: 0.125rem;
+	border: none;
+	border-radius: 0.25rem;
+	-webkit-transition: all 250ms ease-in;
+	transition: all 250ms ease-in;
+}
+
+.btn-primary {
+	border: 1px solid #a3a8f0;
+	background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
+	background: linear-gradient(to right, #a3a8f0, #696fdd);
+	color: #ffffff;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+	background: transparent;
+	color: #696fdd;
+	outline: 0;
+}
+
+.btn-neutral {
+	border: 1px solid #ffffff;
+	background: #ffffff;
+	color: #696fdd;
+}
+
+.btn-neutral:hover,
+.btn-neutral:focus {
+	background: transparent;
+	color: #ffffff;
+	outline: 0;
+}

@@ -1,0 +1,14 @@
+@mixin mq($breakpoint) {
+	@media only screen and (max-width: $breakpoint) {
+		@content;
+	}
+}
+
+@mixin hover-focus($bg, $color) {
+	&:hover,
+	&:focus {
+		background: $bg;
+		color: $color;
+		outline: 0;
+	}
+}
