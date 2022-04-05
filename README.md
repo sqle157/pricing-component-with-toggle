@@ -20,7 +20,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Github](https://github.com/sqle157/pricing-component-with-toggle)
-- Live Site URL: [Live Demo](https://preview-card-component-4c9j1g5f4-sqle157.vercel.app/)
+- Live Site URL: [Live Demo](https://pricing-component-with-toggle-iota-nine.vercel.app/)
 
 ### Built with
 
