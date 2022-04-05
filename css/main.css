@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
-/* 
-------------------------------------------------
------------------- Reset CSS -------------------
-------------------------------------------------
+/*
+-----------------------------------------------
+------------------ Reset CSS ------------------
+-----------------------------------------------
 */
 
 /* Box sizing rules */
@@ -86,10 +86,10 @@ select {
 	}
 }
 
-/* 
-------------------------------------------------
------------------- Main CSS --------------------
-------------------------------------------------
+/*
+-----------------------------------------------
+------------------- Main CSS ------------------
+-----------------------------------------------
 */
 
 h1 {
@@ -126,7 +126,7 @@ body {
 	background-position: bottom left, top right;
 }
 
-/* Utilities  */
+/* Utilities */
 .container {
 	width: min(88%, 1050px);
 	margin-inline: auto;
@@ -156,7 +156,7 @@ body {
 }
 
 /* Component CSS */
-/* Header Section */
+/* Header */
 .header {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -197,6 +197,7 @@ body {
 .header__toggle > span {
 	font-size: 0.9375rem;
 	line-height: 1.8;
+	opacity: 0.5;
 }
 
 .header__switch {
@@ -249,7 +250,7 @@ input:focus + .slider {
 	opacity: 0.5;
 }
 
-/* Card CSS */
+/* Card */
 .card {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -271,8 +272,6 @@ input:focus + .slider {
 	padding: 1.5rem 2rem;
 	margin-block: auto;
 	background-color: #ffffff;
-	/* -webkit-box-shadow: 0 10px 22px 0 #b3b5c6;
-	box-shadow: 0 10px 22px 0 #b3b5c6; */
 }
 
 .card--neutral:first-of-type {
@@ -287,8 +286,8 @@ input:focus + .slider {
 
 .card--primary {
 	color: #ffffff;
-	background: -webkit-gradient(linear, left top, right top, from(#a3a8f0), to(#696fdd));
-	background: linear-gradient(to right, #a3a8f0, #696fdd);
+	background: -webkit-gradient(linear, left top, left bottom, from(#a3a8f0), to(#696fdd));
+	background: linear-gradient(to bottom, #a3a8f0, #696fdd);
 }
 
 .card--primary .plan__cover > * {
@@ -306,7 +305,7 @@ input:focus + .slider {
 	}
 }
 
-/* Plan CSS */
+/* Plan */
 .plan__price {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -361,7 +360,7 @@ input:focus + .slider {
 	}
 }
 
-/* Button CSS */
+/* Button */
 .btn {
 	cursor: pointer;
 	-ms-flex-item-align: stretch;
